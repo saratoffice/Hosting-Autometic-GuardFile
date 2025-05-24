@@ -1,0 +1,261 @@
+/* Table Container */
+    .sara-table-container-v2 {
+      width: 100%;
+      max-width: 95vw;
+      overflow-x: auto;
+      background: #fefefe;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin: 20px auto;
+      box-sizing: border-box;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                  0 10px 20px rgba(0, 0, 0, 0.15),
+                  0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Main Table Styling */
+    #saraCsvTableV2 {
+      width: 100% !important;
+      background: white;
+      color: black;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+      border-collapse: collapse !important;
+      margin: 0 auto;
+      table-layout: auto;
+    }
+
+    #saraCsvTableV2 th,
+    #saraCsvTableV2 td {
+      padding: 12px 15px;
+      vertical-align: top;
+      text-align: left;
+      word-break: break-word;
+      white-space: normal;
+      border-bottom: 1px solid #ddd;
+    }
+
+
+    #saraCsvTableV2 td[data-label="Download"],
+    #saraCsvTableV2 td[data-label="File Size"] {
+      text-align: right;
+      vertical-align: middle;
+    }
+
+   #saraCsvTableV2 thead tr th {
+  background-color: #101535 !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  border-bottom: 2px solid #b20bb3 !important;
+  position: relative;
+  text-align: center; /* <-- add this */
+  vertical-align: middle; /* good practice for vertical centering */
+}
+
+
+    #saraCsvTableV2 thead th.sorting:after,
+    #saraCsvTableV2 thead th.sorting_asc:after,
+    #saraCsvTableV2 thead th.sorting_desc:after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
+    #saraCsvTableV2 thead th.sorting:after {
+      content: "↕";
+      opacity: 0.5;
+    }
+
+    #saraCsvTableV2 thead th.sorting_asc:after {
+      content: "↑";
+    }
+
+    #saraCsvTableV2 thead th.sorting_desc:after {
+      content: "↓";
+    }
+
+    #saraCsvTableV2 tbody tr:hover td {
+      background-color: #707070 !important;
+      color: white;
+      transition: background 0.2s ease-in-out;
+    }
+
+    .sara-download-btn,
+    #saraCsvTableV2 td a button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #ffffff !important;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .sara-download-btn:hover,
+    #saraCsvTableV2 td a button:hover {
+      background-color: #e615ed !important;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(230, 21, 237, 0.4);
+    }
+
+    /* DataTables Wrapper Styles */
+    .dataTables_wrapper {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+      float: right;
+      margin-bottom: 15px;
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+      width: 300px !important;
+      padding: 8px 15px !important;
+      border: 1px solid #ccc !important;
+      border-radius: 6px !important;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    .dataTables_wrapper .dataTables_length {
+      float: left;
+      margin-bottom: 15px;
+    }
+/* Subject column dynamic max-width with percentage */
+#saraCsvTableV2 td[data-label="Subject"] {
+  max-width: 60%;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto;
+}
+/* S.N. column no wrap */
+#saraCsvTableV2 td[data-label="S.N."],
+#saraCsvTableV2 th:nth-child(1) {
+  white-space: nowrap !important;
+  max-width: 50px; /* optional */
+}
+/* Force nowrap on these columns */
+#saraCsvTableV2 td[data-label="Date"],
+#saraCsvTableV2 td[data-label="Download"],
+#saraCsvTableV2 td[data-label="Letter No."],
+#saraCsvTableV2 td[data-label="File Size"] {
+  white-space: nowrap;
+}
+
+
+    .dataTables_wrapper .dataTables_length select {
+      padding: 8px 15px !important;
+      border-radius: 6px !important;
+      border: 1px solid #ccc !important;
+      font-size: 14px;
+    }
+
+    .dataTables_wrapper .dataTables_info {
+      float: left;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate {
+      float: right;
+      margin-top: 15px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      padding: 8px 12px !important;
+      border: 1px solid #ddd !important;
+      margin: 0 2px !important;
+      border-radius: 4px !important;
+      transition: all 0.2s ease;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+      background: #00bbff !important;
+      color: white !important;
+      border-color: #00bbff !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+      background: #b20bb3 !important;
+      color: white !important;
+      border-color: #b20bb3 !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .sara-table-container-v2 {
+        padding: 10px;
+      }
+
+      #saraCsvTableV2,
+      #saraCsvTableV2 thead,
+      #saraCsvTableV2 tbody,
+      #saraCsvTableV2 th,
+      #saraCsvTableV2 td,
+      #saraCsvTableV2 tr {
+        display: block;
+        width: 100%;
+      }
+
+      #saraCsvTableV2 thead {
+        display: none;
+      }
+
+      #saraCsvTableV2 tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        background: #fff;
+      }
+
+      #saraCsvTableV2 td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+        font-size: 13px;
+        text-align: left !important;
+        border-bottom: none;
+      }
+
+      #saraCsvTableV2 td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .dataTables_wrapper .dataTables_length,
+      .dataTables_wrapper .dataTables_filter,
+      .dataTables_wrapper .dataTables_info,
+      .dataTables_wrapper .dataTables_paginate {
+        float: none !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+      }
+
+      .dataTables_wrapper .dataTables_filter input {
+        width: 100% !important;
+        margin: 10px 0 !important;
+      }
+
+      .dataTables_wrapper .dataTables_length select {
+        width: 100% !important;
+      }
+    }
