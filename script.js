@@ -11,9 +11,8 @@ $(document).ready(function () {
       // First process all data and add SortDate
       data = data.map((row, index) => {
         row["Subject"] = (row["Subject"] || "").replace(/_/g, " ").replace(/\.pdf$/i, "").trim();
-        const rawDate = (row["Date"] || "").trim().replace(/\s/g, "-");
-
-        const parts = rawDate.split("-");
+       const rawDate = (row["Date"] || "").trim();
+       const parts = rawDate.split("/");
         if (parts.length === 3) {
           let [dd, mm, yyyy] = parts;
           dd = dd.padStart(2, '0');
